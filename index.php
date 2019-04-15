@@ -6,13 +6,14 @@ if (isset($_SESSION["connect"])) {
 	$connect = false;
 }
 if($connect){
-
 	header("Location: http://localhost/0011_pageconnexionphp/page.php");
 }
+$errusername = "";
+$errpassword = "";
 
 
 if(!empty($_POST)){
-	$stock = ["julien" => "123456","kevin" => "azerty"];
+	$stock = require 'stock.php';
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
@@ -30,13 +31,24 @@ if(!empty($_POST)){
 				header("Location: http://localhost/0011_pageconnexionphp/");	
 			}
 		}else{
+			if (empty($username) ){
+				$errusername = "class= 'danger'";
+			}
+			if (empty($password) ){
+				$errpassword = "class= 'danger'";
+			}
 			header("HTTP/1.0 403 Forbidden");
 			/* TODO : USERNAME ou MDP pas bon */
 			header("Location: http://localhost/0011_pageconnexionphp/");	
 		}
 	}else{
-		die("manque un champ");
-		/* TODO : signaler qu'il manque un champ */
+			if (empty($username) ){
+				$errusername = "class= 'danger'";
+			}
+			if (empty($password) ){
+				$errpassword = "class= 'danger'";
+			}
+/* TODO : signaler qu'il manque un champ */
 		header("Location: http://localhost/0011_pageconnexionphp/");	
 	}
 
@@ -65,8 +77,8 @@ if(!empty($_POST)){
 					<h2>Identification</h2>
 				</header>
 				<form action="" method="Post">
-					<input type="text" name="username" placeholder="Nom d'utilisateur" required="required" />
-					<input type="password" name="password" placeholder="Mot de passe" required="required" />
+					<input <?= $errusername ?> type="text" name="username" placeholder="Nom d'utilisateur"  />
+					<input <?= $errpassword ?> type="password" name="password" placeholder="Mot de passe"  />
 					<button type="submit">Connexion</button>
 				</form>
 			</div>
