@@ -22,42 +22,24 @@ if(!empty($_POST)){
 		if(isset($stock[$username])){
 			if ($password === $stock[$username]){
 					
-					$_SESSION["connect"] = true;
-					$_SESSION["username"] = $username;
-					header("Location: http://localhost/0011_pageconnexionphp/page.php");
-			}else{
-				header("HTTP/1.0 403 Forbidden");
-				/* TODO : USERNAME ou MDP pas bon */
-				header("Location: http://localhost/0011_pageconnexionphp/");	
+				$_SESSION["connect"] = true;
+				$_SESSION["username"] = $username;
+				header("Location: http://localhost/0011_pageconnexionphp/page.php");
 			}
-		}else{
-			if (empty($username) ){
-				$errusername = "class= 'danger'";
-			}
-			if (empty($password) ){
-				$errpassword = "class= 'danger'";
-			}
-			header("HTTP/1.0 403 Forbidden");
-			/* TODO : USERNAME ou MDP pas bon */
-			header("Location: http://localhost/0011_pageconnexionphp/");	
 		}
-	}else{
-			if (empty($username) ){
-				$errusername = "class= 'danger'";
-			}
-			if (empty($password) ){
-				$errpassword = "class= 'danger'";
-			}
-/* TODO : signaler qu'il manque un champ */
-		header("Location: http://localhost/0011_pageconnexionphp/");	
 	}
 
-}
-
+	/* signaler qu'il manque un champ  */
+	if (empty($username) ){
+		$errusername = "class= 'danger'";
+	}
+	if (empty($password) ){
+		$errpassword = "class= 'danger'";
+	}
 	
-
-
-
+/*		header("Location: http://localhost/0011_pageconnexionphp/");	
+*/	
+}
 
 ?>
 
