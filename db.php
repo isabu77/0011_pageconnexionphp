@@ -2,7 +2,7 @@
 require 'config.php';
 
 // connexion bdd -> Isabelle -> table biere en forçant le type en UTF8
-$dsn = 'mysql:dbname=I'.$dbname.';host='.$dbhost.';charset=UTF8';
+$dsn = 'mysql:dbname='.$dbname.';host='.$dbhost.';charset=UTF8';
 
 try {
 	$pdo = new PDO($dsn, $user, $psw);

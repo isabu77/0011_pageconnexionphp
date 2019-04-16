@@ -8,6 +8,15 @@ if ($username){
 	echo "pas de username";
 }
 ?>
+
+liste des autres utilisateurs : 
+- julien mdp : 123456
+- kevin mdp : azerty
+- pepito mdp : pepito
+
+
+
+
 <a href="http://localhost/0011_pageconnexionphp/page.php">site</a>
 <br />
 <a href="http://localhost/0011_pageconnexionphp/profil.php">profil</a>

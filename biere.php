@@ -30,7 +30,15 @@ require 'db.php';
 	      <!-- BOUCLE de lecture du tableau pour afficher un article par bière -->
 			<?php foreach ($beerArray as $row): ?>
 		      	<article class='text-center col-md-4 col-sm-6'>
-		        	<h2 class="text-center text-truncate text-success font-weight-bold col-md-12"><?= (String)$row["nom"]?></h2>
+		        	<h2 class="text-center text-truncate text-success font-weight-bold col-md-12"><?= $row["nom"]?></h2>
+
+		        	<em>
+		        		<form method="POST" action = "deletebiere.php">
+		        			<input type="hidden" name="id" value=<?= $row["id"]?> >
+		        			<button type="submit">suppression</button>
+		        		</form>	
+		        		</em>
+		        	
 		        	<p class='text-justify col-md-10 offset-md-1 offset-sm-2' ><?= substr((String)$row["description"],0,150) . '...';  ?></p>
 		     	</article>
 			<?php endforeach; ?>
