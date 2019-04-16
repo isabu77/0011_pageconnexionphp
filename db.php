@@ -10,12 +10,17 @@ try {
 } catch (Exception $e) {
 	echo 'connexion échouée : ' . $e->getMessage();
 }
-try {
+/*try {
 	$sql = 'SELECT * FROM `biere`';
 	$statement = $pdo->query($sql);
 	$beerArray = $statement->fetchAll();
+	
+	$sql = 'SELECT * FROM `users`';
+	$statement = $pdo->query($sql);
+	$stock = $statement->fetchAll();
 
 } catch (Exception $e) {
 	echo 'lecture échouée : ' . $e->getMessage();
 	
 }
+*/

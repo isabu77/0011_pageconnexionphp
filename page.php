@@ -4,10 +4,10 @@ require 'connect.php';
 echo "bonjour {$username}<br />";
 echo "super site <br />";
 ?>
-<a href="page.php">site</a>
+<a href="page.php">Site</a>
 <br />
-<a href="profil.php">profil</a>
+<a href="profil.php">Profil</a>
 <br />
 <a href="biere.php">Bières</a>
 <br />
-<a href="?deconnect=true">déconnexion</a>
+<a href="?deconnect=true">Déconnexion</a>

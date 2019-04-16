@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (isset($_SESSION["connect"])) {
 	$connect = $_SESSION["connect"];
@@ -12,33 +13,51 @@ if($connect){
 $errusername = "";
 $errpassword = "";
 
+//var_dump($stock);die();
 
 if(!empty($_POST)){
-	$stock = require 'stock.php';
+	//$stock = require 'stock.php';
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
 	if (!empty($username) && !empty($password)){
-		/* TODO : verifier couple user / mdp */
-		if(isset($stock[$username])){
-			if ($password === $stock[$username]){
+		/* verifier couple user / mdp */
+		//bdd -> Isabelle -> table users UNE SEULE FOIS (once)
+		require_once 'db.php';
+		//$sql = 'SELECT * FROM `users` WHERE `name` = "' . $username . '"';
+		$sql = 'SELECT * FROM `users` WHERE `name` = ?';
+		$statement = $pdo->prepare($sql);
+		$statement->execute([$username]);
+		$user = $statement->fetch();
+		//var_dump($pwd);die();
+		//if(isset($stock[$username])){
+			//if ($password === $stock[$username]){
+		if ($user){
+			if ($password === $user['password']){
 					
 				$_SESSION["connect"] = true;
 				$_SESSION["username"] = $username;
 				header("Location: http://localhost/0011_pageconnexionphp/page.php");
 				// FIN DU TRAITEMENT
+				exit();
+			}
+			else{
+				$errpassword = "class= 'danger'";
 			}
 		}
+		else{
+			$errusername = "class= 'danger'";
+		}
 	}
-
-	/* signaler qu'il manque un champ  */
-	if (empty($username) ){
-		$errusername = "class= 'danger'";
+	else{
+		/* signaler qu'il manque un champ  */
+		if (empty($username) ){
+			$errusername = "class= 'danger'";
+		}
+		if (empty($password) ){
+			$errpassword = "class= 'danger'";
+		}
 	}
-	if (empty($password) ){
-		$errpassword = "class= 'danger'";
-	}
-	
 /*		header("Location: http://localhost/0011_pageconnexionphp/");	
 */	
 }

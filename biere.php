@@ -4,6 +4,10 @@ require 'connect.php';
 //bdd -> Isabelle -> table biere en forçant le type en UTF8 dans $beerArray
 require 'db.php';
 
+	$sql = 'SELECT * FROM `biere`';
+	$statement = $pdo->query($sql);
+	$beerArray = $statement->fetchAll();
+
 ?>
 
 <!-- HTML -->
