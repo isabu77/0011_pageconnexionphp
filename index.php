@@ -7,6 +7,7 @@ if (isset($_SESSION["connect"])) {
 }
 if($connect){
 	header("Location: http://localhost/0011_pageconnexionphp/page.php");
+	// FIN DU TRAITEMENT
 }
 $errusername = "";
 $errpassword = "";
@@ -25,6 +26,7 @@ if(!empty($_POST)){
 				$_SESSION["connect"] = true;
 				$_SESSION["username"] = $username;
 				header("Location: http://localhost/0011_pageconnexionphp/page.php");
+				// FIN DU TRAITEMENT
 			}
 		}
 	}

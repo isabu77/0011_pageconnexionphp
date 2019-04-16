@@ -12,4 +12,6 @@ if ($username){
 <br />
 <a href="http://localhost/0011_pageconnexionphp/profil.php">profil</a>
 <br />
+<a href="biere.php">Bière</a>
+<br />
 <a href="http://localhost/0011_pageconnexionphp/profil.php?deconnect=true">déconnexion</a>
