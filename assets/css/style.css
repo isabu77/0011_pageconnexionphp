@@ -40,3 +40,106 @@ article{
 	padding: 10px 20px 0 20px; /* haut droite bas gauche */
 	margin: 10px 0; /* en haut et en bas */
 }
+
+/* header */
+
+header{
+	background: #1c1c1c;
+	padding: 15px 20px ; /* haut+bas droite+gauche */
+}
+
+/* *CSS 3 pour augmenter la taille du header sous les menus */
+header:before,
+header:after{
+	content:"";
+	display:table; /* contenu de haut en bas */
+}
+
+header:after{
+	clear:both;
+}
+
+header{
+	zoom:1; /* pour interent explorer 6 et 7 */
+}
+
+/* le NAV */
+h1.logo a{
+	color: #d8d8d8;
+	text-decoration: none; /* sans soulignement */
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 22px;
+	float:left;		/*coller NAV à gauche*/
+	letter-spacing: 0.2em; /*espacer les lettres de NAV */
+}
+
+/* le menu */
+a.to_nav{
+	float:right; /* coller à droite et flottant au-dessus du header */
+	color:#fff;  /*blanc*/
+	background: #4e4e4e;
+	text-decoration: none; /* pas de soulignement*/
+	padding: 0 10px;
+	font-size:12px;
+	font-weight: bold;
+	line-height: 22px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em; /*espacer les lettres de NAV */
+	border-radius: 2px; /* casser les angles du menu */
+}
+
+a.to_nav:hover,
+a.to_nav:focus{
+	color:#1c1c1c; /* inverser la couleur sur survol en ordi (hover) et clic en mobile (focus)*/
+	background: #ccc;
+}
+
+/* MENU */
+
+#primary_nav ul{
+	list-style:  none;
+	background: #1c1c1c;
+	padding:5px 0; /* haut+bas et droite+gauche*/
+
+}
+
+#primary_nav li a{
+	display: block;
+	padding: 0 20px; /* haut+bas et droite+gauche*/
+	color:#fff;
+	text-decoration: none; /* pas de soulignement*/
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.1em; /*espacer les lettres de NAV */
+	line-height: 2em;
+	height:2em;	/* hauteur du lien pour le clic */
+	border-bottom:1px solid #383838;
+}
+
+#primary_nav li:last-child a{
+	border-bottom:none; /* pas de bordure sur le dernier*/
+}
+
+/* inverser la couleur sur survol en ordi (hover) 
+et clic en mobile (focus pour le tactile)*/
+#primary_nav li a:hover,
+#primary_nav li a:focus{
+	color:#1c1c1c;
+	background: #ccc;
+}
+
+/* FOOTER */
+
+footer{
+	font-family: 'PT Serif', Serif;
+	font-style: italic;
+	text-align: center;
+	font-size: 14px;
+}
+
+
+
+
+
