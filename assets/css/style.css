@@ -1,80 +1,42 @@
-/*------------------
-   Reset
-------------------*/
-
-html{
-	box-sizing: border-box;
-}
-
-*,*:before,*:after{
-	box-sizing: inherit;
-}
-
 body{
-	background-color: white;
-	font-family: Helvetica, sans-serif;
+	font : 16px/1.4em'PT Sans', Sans-Serif;
+	color: #1c1c1c;
+
 }
 
-/*------------------
-   Mise en page
-------------------*/
-
-section.login-container{
-	display: flex;
-	position: fixed;
-	top:0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: rgba(243,156,18,0.8);
+p,ul{
+	margin: 0 0 1.5em;	/* marge en bas */
 }
 
-section.login-container > div{
-	width: 450px;
-	margin: auto;
-	padding: 20px;
-	text-align: center;
-	background: #eee;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+ul{
+	list-style: disc;		/* puces*/
+	padding:	0 0 0 20px; /* décalage du left */
 }
 
-section.login-container form{
-	display: flex;
-	flex-direction: column;
+a{
+	color:#1D7405;		/* vert */
 }
 
-form input[type="password"],
-form input[type="text"],
-form button[type="submit"]{
-	width: 100%;
-	margin-bottom: 32px;
-	padding: 16px;
-	color : #333;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	outline: 0;
+h1{
+
 }
 
-form input[type="password"]:focus,
-form input[type="password"]:hover,
-form input[type="text"]:focus,
-form input[type="text"]:hover{
-	background-color: #ccc;
+h2{
+	font-family: 'PT Serif', Serif;
+	font-size:32px;
+	line-height: 1.4em;	
+	margin:0 0 .4em;
+	font-weight:bold;
 }
 
-form button[type="submit"]{
-	font-weight: bold;
-	color: #eee;
-	text-transform: uppercase;
-	background-color: #e67e22;
+/* layout */
+
+.wrapper{
+
 }
 
-form button[type="submit"]:focus,
-form button[type="submit"]:hover{
-	background-color: #d35400;
-}
-
-.danger{
-	border : 3px solid red !important;
+article{
+	border-bottom:1px solid #d8d8d8;
+	padding: 10px 20px 0 20px; /* haut droite bas gauche */
+	margin: 10px 0; /* en haut et en bas */
 }
