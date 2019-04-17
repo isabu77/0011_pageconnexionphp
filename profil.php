@@ -21,13 +21,24 @@ if ($username){
 - pepito mdp : pepito -->
 
 <h2>liste des autres utilisateurs : </h2>
-<ul style='list-style-type: none;'>
+<section style='list-style-type: none;'>
 	<?php foreach ($stock as $row): ?>
-		<!-- changer point en tiret -->
-   		<li><?= '- ' . $row["name"] . ' mdp : ' . $row["password"];  ?></li>
+
+   		<article>
+   			<form method="POST" action="update.php">
+   				<input type="text" name="username" value="<?= $row["name"]?>">
+  				<input type="text" name="password" placeholder="modification mdp">
+  				<input type="hidden" name="id" value="<?= $row["id"]?>">
+  				<button type="submit">modifier</button>
+   			</form>
+    			
+   		</article>
+
+
+
 	<?php endforeach; ?>
 
-</ul>
+</section>
 
 
 <a href="page.php">Site</a>

@@ -7,8 +7,9 @@ if (isset($_SESSION["connect"])) {
 	$connect = false;
 }
 if($connect){
-	header("Location: http://localhost/0011_pageconnexionphp/page.php");
+	header("Location: page.php");
 	// FIN DU TRAITEMENT
+	exit();
 }
 $errusername = "";
 $errpassword = "";
@@ -33,11 +34,12 @@ if(!empty($_POST)){
 		//if(isset($stock[$username])){
 			//if ($password === $stock[$username]){
 		if ($user){
-			if ($password === $user['password']){
+			// password_verify($pwd, $bdd)
+			if (password_verify($password, $user['password'])){
 					
 				$_SESSION["connect"] = true;
 				$_SESSION["username"] = $username;
-				header("Location: http://localhost/0011_pageconnexionphp/page.php");
+				header("Location: page.php");
 				// FIN DU TRAITEMENT
 				exit();
 			}
